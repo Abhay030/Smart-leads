@@ -42,7 +42,7 @@ export const Register: React.FC = () => {
       const response = await authApi.register(data);
       if (response.data) {
         // Auto-login after successful registration
-        login(response.data.user, response.data.token);
+        login(response.data.token, response.data.user);
         navigate('/dashboard');
       }
     } catch (err: any) {
